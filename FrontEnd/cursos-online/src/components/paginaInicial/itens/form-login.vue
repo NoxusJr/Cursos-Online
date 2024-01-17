@@ -1,17 +1,24 @@
 <template>
     <section id="section-logar">
-        <input type="text" name="email" id="logarEmail" class="form-login">
-        <input type="text" name="senha" id="logarSenha" class="form-login">
+        <input type="text" name="email" id="logarEmail" class="form-login" placeholder="Insira seu email">
+        <input type="text" name="senha" id="logarSenha" class="form-login" placeholder="Insira sua senha">
         <input type="button" value="LOGAR" id="botaoLogar" class="form-login" onclick="logar()">
-        <p class="form-login">Ainda Não Tem Uma Conta? <a class="form-login" href="#">Cadastre-se</a></p>
+        <p class="form-login">Ainda Não Tem Uma Conta? <span @click="childToCriar" class="form-login">Cadastre-se</span></p>
+        <p id="avisoLogin" class="form-login"></p>
     </section>
 </template>
 
 
 <script>
     export default{
-        name:"form-login"
+        name:"form-login",
+        methods:{
+            childToCriar(){
+                this.$emit('childToCriar');
+            }
+        }
     }
+
 </script>
 
 
@@ -24,6 +31,7 @@
     input.form-login{
         margin:auto;
         margin-top:25px;
+        text-align: center;
         display:block;
         width: 250px;
         height: 30px;
@@ -41,6 +49,10 @@
         color:white;
     }
 
+    p#avisoLogin{
+        color:red;
+    }
+
     #botaoLogar{
         margin-top:20px;
         width: 130px;
@@ -52,8 +64,10 @@
         background-color:#1d1d1d;
     }
 
-    a.form-login{
-        color:var(--Header-VueJs)
+    span.form-login{
+        color:var(--Header-VueJs);
+        cursor:pointer;
+        text-decoration: underline;
     }
 
 </style>

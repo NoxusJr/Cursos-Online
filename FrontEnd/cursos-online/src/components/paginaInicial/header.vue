@@ -2,8 +2,17 @@
     <header id="header-paginaInicial">
             <h1>CURSOS <br> ONLINE</h1>
             <p id="descricao">os melhores cursos em um só lugar</p>
-            <input class="botaoConta" id="botaoLogar" type="button" value="LOGAR">
-            <input class="botaoConta" id="botaoCadastrar" type="button" value="CADASTRAR">
+
+            <div v-if="showForm">
+                <FormLogin @childToCriar="toCriar" v-if="showLogar"></FormLogin>
+                <FormCriar @childToLogar="toLogar" v-if="showCriar"></FormCriar>
+            </div>
+
+            <div v-else>
+                <input class="botaoConta" id="botaoLogar" type="button" value="LOGAR" @click="toLogar">
+                <input class="botaoConta" id="botaoCadastrar" type="button" value="CADASTRAR" @click="toCriar">
+            </div>
+
             <p id="tecnologia">Powered By: <span class="VueJs">VueJs</span> + <span class="Py">Python</span>+<span class="Yt">Yt</span></p>
             <p id="creditos">Desenvolvido Por: <a target="_blank" href="https://github.com/NoxusJr">NoxusJr</a></p>
     </header>
@@ -19,6 +28,21 @@
         components: {
             FormLogin,
             FormCriar
+        },
+        data(){
+            return{
+                showForm: false,
+                showLogar: false,
+                showCriar: false,
+            }
+        },
+        methods: {
+            toLogar(){
+                changeToLogar(this,this.showForm,this.showLogar)
+            },
+            toCriar(){
+                changeToCriar(this,this.showForm,this.showCriar)
+            }
         }
     }
 </script>

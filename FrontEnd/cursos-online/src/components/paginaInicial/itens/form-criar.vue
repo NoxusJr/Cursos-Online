@@ -1,18 +1,24 @@
 <template>
     <section class="form-criar" >
-        <input type="text" name="nome" id="nome" class="form-criar">
-        <input type="text" name="email" id="email" class="form-criar">
-        <input type="text" name="senha" id="senha" class="form-criar">
-        <input type="text" name="senhaNovamente" id="senhaNovamente" class="form-criar">
-        <input type="button" value="CRIAR CONTA" id="botaoCriar" class="form-criar">
-        <p class="form-criar">Já Possui Uma Conta? <a class="form-criar" href="#">Faça Login!</a></p>
+        <input type="text" name="nome" id="criarNome" class="form-criar" placeholder="Insira seu nome">
+        <input type="text" name="email" id="criarEmail" class="form-criar" placeholder="Insira seu email">
+        <input type="text" name="senha" id="criarSenha" class="form-criar" placeholder="Insira sua senha">
+        <input type="text" name="senhaNovamente" id="senhaNovamente" class="form-criar" placeholder="Confirme sua senha">
+        <input type="button" value="CRIAR CONTA" id="botaoCriar" class="form-criar" onclick="criarConta()">
+        <p class="form-criar">Já Possui Uma Conta? <span @click="childToLogar" class="form-criar">Faça Login!</span></p>
+        <p id="avisoCriar" class="form-criar"></p>
     </section>
 </template>
 
 
 <script>
     export default{
-        name:"form-criar"
+        name:"form-criar",
+        methods:{
+            childToLogar(){
+                this.$emit('childToLogar');
+            }
+        }
     }
 </script>
 
@@ -26,6 +32,7 @@
     input.form-criar{
         margin:auto;
         margin-top:25px;
+        text-align: center;
         display:block;
         width: 250px;
         height: 30px;
@@ -43,6 +50,10 @@
         color:white;
     }
 
+    p#avisoCriar{
+        color:red;
+    }
+
     #botaoCriar{
         margin-top:20px;
         width: 130px;
@@ -54,8 +65,10 @@
         background-color:#1d1d1d;
     }
 
-    a.form-criar{
-        color:var(--Header-VueJs)
+    span.form-criar{
+        color:var(--Header-VueJs);
+        cursor:pointer;
+        text-decoration: underline;
     }
 
 </style>
