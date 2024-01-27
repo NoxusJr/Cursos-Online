@@ -5,6 +5,18 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app)
 
+
+@cross_origin
+@app.route('/conta/verificarEmail', methods=['POST'])
+def rota_enviar_email_verificacao():
+    dados_do_corpo = request.get_json()
+    nome = dados_do_corpo['nome']
+    email = dados_do_corpo['email']
+    codigo = dados_do_corpo['codigo']
+
+    execucao = usuario.verificar_conta(nome,email,codigo)
+    return [execucao]
+
 @cross_origin
 @app.route('/conta/criarConta',methods=['POST'])
 def rota_criar_conta():

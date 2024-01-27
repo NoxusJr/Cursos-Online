@@ -6,6 +6,15 @@ class Usuario:
         self.data_base = data_base  
 
 
+    def verificar_conta(self,nome,email,codigo):
+        email_disponivel = gs.sql_verificar_uso_email(tabela=DB_TABLE_USER,email=email)
+        if not email_disponivel:
+            resultado = gs.enviar_verificacao_email(nome,email,codigo)
+            return resultado
+        else:
+            return [False, "Email Utilizado"]
+
+
     def criar_conta(self,nome,email,senha):
         resultado = gs.sql_criar_conta(tabela=DB_TABLE_USER,coluna_nome=DB_USER_COLUMN_NAME,coluna_email=DB_USER_COLUMN_EMAIL,coluna_senha=DB_USER_COLUMN_PASS,nome=nome,email=email,senha=senha)
         return resultado

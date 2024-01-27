@@ -1,17 +1,42 @@
 <template>
-  <Header></Header>
-  <Main></Main>
+  <Header :objetoPai="logado" @atualizar-estado-login="atualizarEstadoLogin" v-if="!logado"></Header>
+  <Main v-if="!logado"></Main>
+  <Dashboard v-if="logado"></Dashboard>
 </template>
 
 <script>
   import Header from './components/paginaInicial/header.vue';
   import Main from './components/paginaInicial/main.vue';
+  import Dashboard from './views/dashboard.vue'
 
   export default {
     name:"App",
     components: {
       Header,
-      Main
+      Main,
+      Dashboard
+    },
+    data(){
+      return{
+        logado:false
+      }
+    },
+    mounted(){
+      this.verificarEstadoConta()
+    },
+    methods:{
+      atualizarEstadoLogin(novoEstado){
+        this.logado = novoEstado
+      },
+      async verificarEstadoConta(){
+        let resultado = await verificarEstadoInicial()
+
+        if (resultado == true){
+          this.logado = true
+        } else{
+          this.logado = false
+        }
+      }
     }
   }
 </script>
@@ -47,6 +72,10 @@
     --Main-Credito-Texto-Hover:#ffffff;
     --Main-Credito-Background:#009CBF;
     --Main-Credito-Background-Hover:#00708a;
+  }
+
+  body{
+    background-color: #171717;
   }
 
   .dark:root{

@@ -14,13 +14,13 @@
             </div>
         </div>
         <h2 id="quemSomos">Quem Somos?</h2>
-        <p id="pQuemSomos">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore iure tenetur, voluptatum cupiditate praesentium animi eaque at illo recusandae alias sit repellat minus assumen</p>
+        <p id="pQuemSomos">Somos um agregador de cursos das mais diversas categorias! Contamos tambem com um sistema de controle de cursos iniciados!</p>
         
         <h2 id="comoFunciona">Como Funciona?</h2>
-        <p id="pComoFunciona">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit facilis labore ab esse expedita ipsa ratione doloremque, maxime officia quam rerum ea fuga, qui aliquid.</p>
+        <p id="pComoFunciona">Escolha um curso e começe a assistir. Simples assim! Os cursos estão hospedados no youtube por grandes criadores de conteudo, que ajudam as mais diversas comunidades.</p>
 
         <h2 id="objetivo">Objetivo do projeto</h2>
-        <p id="pObjetivo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eveniet tempora sapiente voluptate harum debitis earum quam, nesciunt nostrum eum autem recusandae placeat ipsa dolorum soluta dolores exercitationem. Unde, id?</p>
+        <p id="pObjetivo">O Projeto foi desenvolvido para prática do VueJs e suas ferramentas, além de claro, desenvolver melhor boas práticas e técnicas de desenvolvimento. Ao final deste projeto me sinto mais preparado para os futuros desafios.</p>
 
         
         <div id="foto"></div>
@@ -121,6 +121,10 @@
         background-color: var(--Main-Div);
         border: 2px solid black;
         border-radius: 0%;
+        background: url('../../img/icon.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
 
     div#linksBox{
