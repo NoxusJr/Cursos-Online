@@ -92,12 +92,12 @@
                 }
             },
             async cliqueConfirmar(){
+                avisoConfirmar.innerHTML = ""
                 let resultado = await criarConta()
                 if (resultado == false){
                     avisoConfirmar.innerHTML = "Algum erro aconteceu"
                 } else {
-                    // LÓGICA PARA IR PARA O DASHBOARD
-                    console.log('logado')
+                    location.reload()
                 }
             },
             async cliqueFazerLogin(){
@@ -328,5 +328,31 @@
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         margin-top: 15px;
         color: red;
+    }
+
+    @media (max-width:1000px) {
+        header#header-paginaInicial {
+            position: absolute;
+        }
+        
+        header#header-paginaInicial > h1 {
+            font-size: 48px;
+        }
+
+        header#header-paginaInicial > section {
+            margin-top: 10px;
+        }
+
+    }
+
+    @media (max-width:800px) {
+        header#header-paginaInicial{
+            display: block;
+            position: relative;
+            height: auto;
+            padding-bottom: 30px;
+            width: 100vw;
+            max-width: 100%;
+        }
     }
 </style>

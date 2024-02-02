@@ -17,9 +17,9 @@
         <p id="pQuemSomos">Somos um agregador de cursos das mais diversas categorias! Contamos tambem com um sistema de controle de cursos iniciados!</p>
         
         <h2 id="comoFunciona">Como Funciona?</h2>
-        <p id="pComoFunciona">Escolha um curso e começe a assistir. Simples assim! Os cursos estão hospedados no youtube por grandes criadores de conteudo, que ajudam as mais diversas comunidades.</p>
+        <p id="pComoFunciona">Escolha um curso e começe a assistir. Simples assim! Os cursos estão hospedados no youtube por grandes criadores de conteudo, que ajudam as mais diversas comunidades. <br> <br> <span style="color: red;font-weight: bolder;">DADOS INSERIDOS, COMO O EMAIL E SENHA, SÃO EXCLUIDOS EM 24 HORAS, O PROJETO É UM ESTUDO DE CASO.</span></p>
 
-        <h2 id="objetivo">Objetivo do projeto</h2>
+        <h2 id="objetivo" style="margin-top: 10px;">Objetivo do projeto</h2>
         <p id="pObjetivo">O Projeto foi desenvolvido para prática do VueJs e suas ferramentas, além de claro, desenvolver melhor boas práticas e técnicas de desenvolvimento. Ao final deste projeto me sinto mais preparado para os futuros desafios.</p>
 
         
@@ -160,5 +160,36 @@
         border-radius: 100%;
         background-color: var(--Main-H2);
         cursor: pointer;
+    }
+
+    @media (max-width:800px) {
+        main{
+            display: block;
+            position: relative;
+            width: 100vw;
+            max-width: 100%;
+        }
+
+        div#linksBox{
+            width: 100vw;
+        }
+        
+        div#linksBox > a{
+            margin: auto;
+            display: block;
+            position: relative;
+            text-align: center;
+            width:50vw;
+            margin-top: 10px;
+        }
+
+        main > p {
+            width: 77vw;
+        }
+
+        .curso{
+            min-width: 100px;
+            min-height: 50px;
+        }
     }
 </style>

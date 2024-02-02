@@ -101,6 +101,8 @@ async function criarConta() {
     
         try {
             const resultado = await requisicaoPost(url, dados)
+            console.log(resultado)
+            console.log(resultado[0])
             if (resultado[0] == true){
                 setCookie('emailCookie',email,30)
                 setCookie('senhaCookie',senha,30)

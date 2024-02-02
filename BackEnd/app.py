@@ -69,6 +69,3 @@ def rota_retornar_status():
 
     execucao = status_usuario.retornar_cursos_usuario(email)
     return [execucao]
-
-
-app.run(host='localhost',port=5000)

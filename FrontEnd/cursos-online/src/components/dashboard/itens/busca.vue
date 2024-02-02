@@ -55,4 +55,29 @@
         text-align: center;
         color: white;
     }
+
+    @media (max-width:600px) {
+        div#barra-de-busca > input {
+            width: 400px;
+        }
+
+        div#barra-de-busca{
+            width:100vw;
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width:500px) {
+        div#barra-de-busca > input {
+            margin-top: 30px;
+            width: 400px;
+        }
+    }
+
+    @media (max-width:400px) {
+        div#barra-de-busca > input {
+            margin-top: 30px;
+            width: 250px;
+        }
+    }
 </style>
