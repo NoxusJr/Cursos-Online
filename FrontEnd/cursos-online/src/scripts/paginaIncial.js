@@ -55,7 +55,7 @@ async function requisicaoPost(url, dados) {
 }
 
 async function contaLogar() {
-    const url = 'http://127.0.0.1:5000/conta/logarConta'
+    const url = 'https://curso-online.onrender.com/conta/logarConta'
 
     let email = document.getElementById('logarEmail')
     let senha = document.getElementById('logarSenha')
@@ -91,7 +91,7 @@ async function criarConta() {
         email = getCookieValue('emailCookie')
         senha = getCookieValue('senhaCookie')
 
-        const url = 'http://127.0.0.1:5000/conta/criarConta'
+        const url = 'https://curso-online.onrender.com/conta/criarConta'
 
         const dados = {
             nome: nome,
@@ -120,7 +120,7 @@ async function criarConta() {
 } 
 
 async function verificarConta(nome,email,senha,codigo){
-    const url = 'http://127.0.0.1:5000/conta/verificarEmail'
+    const url = 'https://curso-online.onrender.com/conta/verificarEmail'
 
     setCookie('nomeCookie',nome,3)
     setCookie('emailCookie',email,3)
@@ -145,7 +145,7 @@ async function verificarEstadoInicial(){
     let email = getCookieValue('emailCookie')
     let senha = getCookieValue('senhaCookie')
 
-    const url = 'http://127.0.0.1:5000/conta/logarConta'
+    const url = 'https://curso-online.onrender.com/conta/logarConta'
 
     const dados = {
         email: email,
